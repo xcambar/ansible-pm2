@@ -5,7 +5,10 @@
     name: pm2
     global: yes
     version: "{{ pm2_version | default(omit) }}"
-  notify: update pm2
+
+- name: Update to the latest version
+  shell: pm2 updatePM2
+  when: pm2_service_state != 'stopped'
 
 - name: Looking up user home
   shell: >
