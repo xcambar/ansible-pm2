@@ -5,7 +5,7 @@
     name: pm2
     global: yes
     version: "{{ pm2_version | default(omit) }}"
-  notify: update pm2
+  # notify: update pm2
 
 - name: Looking up user home
   shell: >
